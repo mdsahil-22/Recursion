@@ -1,28 +1,23 @@
 #include <iostream>
 using namespace std;
 
-//helper is because we give the starting and ending points
-//so it help us to reach the point
-int helper(string s, int start, int end){
-     if(start >= end){
+
+int helper(string s, int start, int end){   //helper is because we give the starting and ending points                                      
+     if(start >= end){                     //so it help us to reach the point
           return 1;
+     }    
+     
+     if(s[start] != s[end]){   //here we check the current position so we use
+          return 0;           //s[start] and s[end] for starting and ending points respectively
      }
      
-     //here we check the current position so we use 
-     //s[start] and s[end] for starting and ending points respectively
-     if(s[start] != s[end]){
-          return 0;
-     }
-     
-     //this return help us to traverse the path or string
-     return helper(s, start+1, end-1);
+     return helper(s, start+1, end-1);   //this return help us to traverse the path or string
 }
 
 int isPalindrome(string s){
-     //this will give us the size of the ending point
-     int n = s.size()-1; 
-     //help us to call the recursive function with its point size
-     return helper(s, 0, n);
+    
+     int n = s.size()-1;        //this will give us the size of the ending point
+     return helper(s, 0, n);   //help us to call the recursive function with its point size
 }
 
 int main(){
