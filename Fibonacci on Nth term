@@ -1,0 +1,36 @@
+
+#include <iostream>    
+using namespace std;
+
+int fibonacci(int n) {
+     //Base Case
+     if(n == 0){
+         return 0;
+     }
+     if(n == 1){
+          return 1;
+     }
+
+     //Recusive Call
+     int recCall_1 = fibonacci(n-1);
+     int recCall_2 = fibonacci(n-2);
+
+     //Small Calculation
+     int result = recCall_1 + recCall_2;
+     return result;
+}
+
+int main(){
+     
+     int n;
+     cin >> n;
+
+     cout << fibonacci(n) << " ";
+
+     return 0;
+}
+
+----------------------------------------------
+OUTPUT:
+N = 6
+result = 8
