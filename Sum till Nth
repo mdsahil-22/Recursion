@@ -1,0 +1,28 @@
+#include <iostream>         
+using namespace std;
+
+int Sum(int N){
+     
+     //Base Case
+     if(N == 1 || N == 0){ 
+          return N;
+     }
+     
+     //Recursive Call
+     int recSolution = Sum(N-1);
+     
+     //Small Calculation
+     int Result = N + Sum(N-1); 
+     
+     return Result;
+}
+
+int main(){
+     
+     int N;
+     cin >> N;
+
+     cout << Sum(N) << endl;
+
+     return 0;
+}
