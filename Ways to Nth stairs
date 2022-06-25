@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+int countWays(int n){
+
+     //Base Case
+     if(n == 1 || n == 2){
+          return n;
+     }
+
+     //resursive Call
+     int recCall1 = countWays(n-1);
+     int recCall2 = countWays(n-2);
+
+     //small Calculation
+     int result = recCall1 + recCall2;
+     return result;
+}
+
+int main(){
+     
+     int n;
+     cin >> n;
+
+     cout << countWays(n);
+
+     return 0;
+}
+
+------------------------------------------------
+OUTPUT:
+n = 10
+result = 89
