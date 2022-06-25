@@ -1,0 +1,31 @@
+#include <iostream>   
+using namespace std;
+
+unsigned int factorial(unsigned int N){
+     
+     //Base Case
+     if(N == 1 || N == 0){
+          return N;
+     }
+     
+     //Recursive Call
+     int recur = factorial(N-1);
+     
+     //Small Calculation
+     int result = N * recur;
+     return result;
+}
+
+int main(){
+     
+     int N;
+     cin >> N;
+     cout << factorial(N) << endl;
+
+     return 0;
+}
+
+------------------------------------------
+OUTPUT:
+N = 5
+result = 120
